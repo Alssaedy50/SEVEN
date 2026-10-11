@@ -1,40 +1,43 @@
-# SEVEN — AQSA7 Rebuild
+# SEVEN — Clean-Room Clinic App
 
-SEVEN is the clean-room rebuild of the AQSA7 / ALSSAEDY CLINIC application, prioritizing a reliable mobile-first workflow for patient records and professional digital receipt issuance/export.
+SEVEN is a new, mobile-first project for recording patients and creating, previewing, and exporting professional dental-clinic receipt vouchers.
 
-## Source of truth
+## Product source of truth
 
-The previous implementation is available at https://github.com/Alssaedy50/AQSA7. It must be inspected as a behavioral reference before implementing replacements. Rebuild from clean architecture; do not copy the old application's tangled structure wholesale, and do not silently drop features that are part of the agreed scope.
+The first-release scope is limited to:
+- Patient records.
+- Receipt creation and management.
+- Receipt preview.
+- Receipt export/share/print output.
+- Receipt history.
+- Essential clinic and receipt settings.
 
-## Product priorities
+AQSA7 (https://github.com/Alssaedy50/AQSA7) is a **conceptual reference only** for understanding the problem domain and possible user needs. Do not copy or reuse its code, UI, styles, components, or technical architecture. SEVEN must have its own approved page map, wireframes, interaction specification, and implementation decisions.
 
-1. Mobile-first clinic workflow.
-2. Create, view, edit, and manage patient records.
-3. Create and store receipt vouchers linked to patients when applicable.
-4. Render a professional receipt preview with Arabic RTL and English LTR identity.
-5. Export/print receipts reliably; verify actual output rather than treating visible buttons as completed features.
-6. Search/filter history, settings, templates, backup/restore, and synchronization only with explicit acceptance tests.
-7. Protect patient data; document storage, backup, and sync limitations honestly.
+## Design-first process
 
-## Working rules
+1. Agree on the first-release scope.
+2. Review and approve the detailed page map.
+3. Design and approve low-fidelity wireframes.
+4. Document every button, field, navigation item, dialog, validation, success/error state, and test.
+5. Select technology based on the approved product and constraints.
+6. Implement in small increments and test each milestone.
+7. Test on the target Android phone before claiming mobile acceptance.
 
-- Inspect and document the legacy behavior before coding.
-- Build in small, verifiable milestones.
-- Every visible control must work or be clearly disabled with an explanation.
-- Test at mobile viewport sizes and on Android where possible.
-- Never claim device, OAuth, print/share, or multi-device sync acceptance unless it was actually tested.
-- Keep secrets out of source control.
-- Do not use production patient information in tests.
-- Prefer readable modular code and automated regression tests over one large HTML/JS file.
+**No page should be coded before its design and interactions are approved.** No control is considered complete just because it appears on screen. No export, print, share, persistence, or recovery feature is marked complete until it has been exercised and verified.
 
-## Milestones
+## Design principles
 
-- M0: Legacy audit and acceptance criteria.
-- M1: Mobile shell, navigation, data model, durable local persistence.
-- M2: Patient records and search.
-- M3: Receipt creation, preview, and history.
-- M4: PDF/print/image export and regression tests.
-- M5: Settings, templates, backup/restore, and any approved sync.
-- M6: Android/mobile acceptance, deployment, and release checklist.
+- Mobile-first, Arabic-first RTL, with correct English LTR rendering.
+- Simple, stable, readable workflows.
+- Protect patient data and use only synthetic test data.
+- Make empty, loading, validation, success, and error states explicit.
+- Document storage and backup limitations honestly.
+- Keep release 1 focused; do not add unapproved modules.
 
-See [Product specification](docs/PRODUCT_SPEC.md) and [Verification checklist](docs/VERIFICATION.md).
+## Project documents
+
+- [Detailed page map](docs/design/PAGE_MAP.md)
+- [Product specification](docs/PRODUCT_SPEC.md)
+- [Verification checklist](docs/VERIFICATION.md)
+- [Preliminary conceptual audit of AQSA7](docs/LEGACY_AUDIT.md)
