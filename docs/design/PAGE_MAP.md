@@ -1,6 +1,6 @@
 # SEVEN — Detailed Page Map (Release 1)
 
-**Status:** Draft for user review. This is a product/design artifact only. No interface has been approved and no application code is authorized by this document.
+**Status:** Updated draft aligned with approved operating decisions. Wireframes and detailed interactions still require review; no application code is authorized by this document.
 
 ## 1. Approved release boundary
 
@@ -77,7 +77,7 @@ This navigation arrangement is proposed, not yet approved.
 - Clear search → full list.
 - إنشاء سند → P04 Receipt Form; if launched from a patient row, preselect that patient.
 
-**Rules to decide during field design:** which patient fields are mandatory; whether phone number is unique; whether delete is allowed or records should be archived.
+**Approved field rule:** full name and phone number are required. Phone uniqueness is not decided; do not reject shared family phone numbers by default. Archive/deletion behavior remains open.
 
 ### P03 — Patient Form / إضافة أو تعديل مريض
 
@@ -85,7 +85,7 @@ This navigation arrangement is proposed, not yet approved.
 
 **Proposed fields (final list requires approval):**
 - Full name (required).
-- Phone number (optional unless the clinic requires it).
+- Phone number (required; validate and normalize as text, not a number).
 - Optional patient note or secondary identifier only if clearly needed for receipt identification; no clinical record fields in Release 1.
 
 **Actions:**
@@ -121,7 +121,7 @@ This navigation arrangement is proposed, not yet approved.
 
 **States:** blank; partially filled; invalid values; conditional transfer fields; saving; save failure; duplicate-number protection.
 
-**Decision required:** whether preview automatically saves the receipt or requires an explicit save/issue action. The wireframe must not assume this silently.
+**Decision still open:** whether preview saves a draft or follows explicit issue. Never allocate an issued receipt number merely because the form opens.
 
 ### P05 — Patient Details / ملف المريض
 
@@ -264,16 +264,16 @@ Settings → Clinic Identity → edit → save → new preview reflects saved id
 
 ## 7. Decisions to settle before wireframes
 
-1. Confirm the proposed 10-page inventory and four-destination navigation.
-2. Approve patient fields and whether deletion or archival is allowed.
-3. Decide receipt save/issue timing and whether drafts exist.
-4. Decide whether issued receipts can be edited, voided, or deleted.
-5. Approve required output formats (PDF, image, print; A5/A4/80 mm).
-6. Approve currency and amount-in-words behavior.
-7. Decide whether old receipts preserve a snapshot of clinic identity.
-8. Decide whether logo upload is required in Release 1.
-9. Confirm whether any backup/export of all records is required in Release 1; do not add it silently.
-10. Confirm storage expectations (this device only versus multi-device access) before choosing technology.
+1. Review the proposed page inventory and four-destination navigation.
+2. Decide patient archive/deletion behavior; name and phone are required, but phone uniqueness is not decided.
+3. Define the draft/issue/preview sequence and receipt numbering.
+4. Define the field allowlist for limited post-issue corrections, audit reason and display, and void/reissue handling for material financial changes.
+5. Confirm output deliverables and verify A5 portrait (148 × 210 mm), PDF/PNG/print/share behavior.
+6. Define supported alternative currencies, precision, and amount-in-words behavior; YER is the default.
+7. Confirm the clinic/patient identity snapshot behavior for issued receipts.
+8. Verify the actual logo asset and decide whether logo upload/change is in Release 1.
+9. Design manual full-data backup and restore, including invalid-file handling and explicit replacement confirmation.
+10. Confirm the PWA/local-storage technical stack only after the design and data model are approved.
 
 ## 8. Approval gate
 
