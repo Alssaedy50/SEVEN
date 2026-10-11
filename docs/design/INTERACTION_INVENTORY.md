@@ -1,6 +1,6 @@
 # SEVEN — Interaction Inventory (Draft)
 
-**Status:** Draft derived from `docs/design/PAGE_MAP.md`. Not yet approved. This document defines intended behavior, not implemented behavior. No application code is authorized by this document.
+**Status:** Updated draft aligned with approved data/storage/currency decisions. This document defines intended behavior, not implemented behavior. No application code is authorized by this document.
 
 ## 1. Global behavior
 
@@ -42,7 +42,7 @@ Home counts, if shown, must derive from saved records and be omitted if they do 
 | ID | Control | Behavior | Validation / edge cases | Status |
 |---|---|---|---|---|
 | PTF-01 | اسم المريض | Enter full name | Required; trim leading/trailing whitespace; reject blank-only values | Proposed |
-| PTF-02 | رقم الهاتف | Enter optional phone | Normalize safely; do not assume phone is globally unique until decided | Proposed |
+| PTF-02 | رقم الهاتف | Enter required phone | Required; validate/normalize as text, preserve leading `+`; do not assume phone is globally unique | Updated draft |
 | PTF-03 | أي حقل إضافي | Only include after field list approval | Must have a clear Release 1 purpose | Not approved |
 | PTF-04 | حفظ | Validate and save new/edit record | P05 after success; prevent accidental duplicate submission | Proposed |
 | PTF-05 | إلغاء/رجوع | Leave form | If dirty, show confirmation | Proposed |
@@ -64,11 +64,11 @@ Home counts, if shown, must derive from saved records and be omitted if they do 
 | RF-01 | Patient/received-from selector | Select existing patient or enter a payer name | Must prevent accidental loss of partially entered receipt data when opening patient creation | Design decision needed |
 | RF-02 | Receipt date | Select date | Use a documented local-date rule; prevent invalid date values | Proposed |
 | RF-03 | Amount | Enter monetary amount | Required, numeric, greater than zero; define allowed decimal precision with currency | Proposed |
-| RF-04 | Currency | Select approved currency | Default must come from settings; changing currency must not silently reinterpret amount | Decision needed |
+| RF-04 | Currency | Select currency | Default is YER; allow another explicitly supported currency; changing currency must not silently reinterpret the amount | Updated draft; alternative list open |
 | RF-05 | Payment method | Select one approved method | Conditional fields appear only for transfer/wallet/bank methods | Decision needed |
 | RF-06 | Transfer reference/sender | Enter relevant transfer details | Requiredness depends on payment method and clinic policy | Decision needed |
 | RF-07 | Amount in words | Display or enter amount in words | Decide auto-generated versus manual; prevent mismatch with numeric amount | Decision needed |
-| RF-08 | Receipt number | System-generated or policy-controlled | Unique; define sequence, concurrency, and behavior after void/cancel | Decision needed |
+| RF-08 | Receipt number | Allocate a unique number at issue, not on form open | Define sequence and void/gap behavior; never reuse an issued number | Decision needed |
 | RF-09 | معاينة السند | Validate and proceed to preview | P06; save/issue timing must be explicit before implementation | Decision needed |
 | RF-10 | Save draft (optional) | Save incomplete receipt only if drafts are approved | Must be visibly marked draft and excluded from issued history/output rules as specified | Not approved |
 | RF-11 | Cancel | Return to origin | Warn if receipt data would be lost | Proposed |
