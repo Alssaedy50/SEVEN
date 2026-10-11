@@ -26,6 +26,15 @@ AQSA7 (https://github.com/Alssaedy50/AQSA7) is a **conceptual reference only** f
 
 **No page should be coded before its design and interactions are approved.** No control is considered complete just because it appears on screen. No export, print, share, persistence, or recovery feature is marked complete until it has been exercised and verified.
 
+## Approved operating decisions
+
+- Local single-device data storage in Release 1; no cloud synchronization.
+- Manual full-data backup and restore are in scope.
+- Yemeni rial (YER) is the default currency; supported alternative currency is optional.
+- Patient full name and phone number are both required; phone uniqueness is not assumed.
+- Issued receipts permit limited, audited corrections; exact editable fields remain a design decision.
+- A5 portrait receipt output (148 × 210 mm) includes both blank-template and digitally filled modes.
+
 ## Design principles
 
 - Mobile-first, Arabic-first RTL, with correct English LTR rendering.
