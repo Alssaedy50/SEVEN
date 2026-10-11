@@ -34,7 +34,7 @@ No appointments, clinical notes, diagnoses, prescriptions, inventory, staff acco
 
 A prominent **سند جديد** action should be reachable from Home, Patients, and History. It opens the receipt form. This avoids giving receipt creation a separate permanent navigation tab while keeping it easy to reach.
 
-This navigation arrangement is proposed, not yet approved.
+This navigation arrangement remains a design proposal for review; storage, default currency, and required patient phone decisions are already approved.
 
 ## 4. Page inventory
 
