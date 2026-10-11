@@ -2,6 +2,15 @@
 
 Use this checklist for every milestone. Mark an item PASS only after the stated behavior was actually exercised; otherwise leave it OPEN and record the limitation.
 
+## Approved operating decisions
+
+- Release 1 stores data locally on one phone; cloud sync is out of scope.
+- Manual full-data backup and restore are included in Release 1.
+- YER is the default currency; other currencies are optional only if explicitly supported.
+- Patient phone is required; uniqueness is not assumed.
+- Issued-receipt corrections are limited and require an audit trail; exact field rules remain open.
+- A5 portrait (148 × 210 mm) and blank-template/digital-filled output modes are required design targets.
+
 ## Design gates — must be completed before application code
 
 - [ ] User-approved release scope is recorded.
@@ -13,7 +22,9 @@ Use this checklist for every milestone. Mark an item PASS only after the stated 
 - [ ] Every button, field, tab, menu, and dialog is listed in the interaction inventory.
 - [ ] Validation, loading, empty, success, and error states are specified.
 - [ ] Currency, numbering, amount-in-words, output format, and paper-size decisions are recorded.
-- [ ] Storage, backup/recovery, and single-device versus multi-device expectations are decided.
+- [x] Storage model is decided: local single-device, manual backup/restore, no cloud sync in Release 1.
+- [ ] Backup/restore screens, file format, invalid-backup handling, and restore confirmation are designed and approved.
+- [ ] Data model, patient-phone validation, currency precision, receipt-numbering and correction audit rules are approved.
 - [ ] User approves the wireframes and interaction inventory.
 - [ ] Technical stack is selected only after the above requirements are clear.
 
@@ -47,7 +58,7 @@ Use this checklist for every milestone. Mark an item PASS only after the stated 
 - [ ] Verify numbering uniqueness and date handling.
 - [ ] Verify currency labels and amount-in-words behavior.
 - [ ] Search/filter history and open an existing receipt.
-- [ ] Verify approved edit/void lifecycle restrictions.
+- [ ] Verify limited post-issue corrections create an audit entry with old/new values, timestamp, and reason; verify disallowed fields cannot be silently changed.
 - [ ] Test long names, large amounts, missing optional fields, and Arabic text.
 
 ### Export and print
@@ -59,7 +70,7 @@ Use this checklist for every milestone. Mark an item PASS only after the stated 
 - [ ] Test output on an Android phone or explicitly leave physical-device testing OPEN.
 
 ### Data safety
-- [ ] Backup/restore is tested if included in the approved scope.
+- [ ] Manual full-data backup and restore are implemented and tested; invalid backups are rejected without damaging current data.
 - [ ] Invalid backup is rejected without corrupting existing data.
 - [ ] Schema migration has a test from the previous supported version if migrations exist.
 - [ ] Cloud sync is not included or claimed unless separately approved and tested.
