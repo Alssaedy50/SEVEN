@@ -38,6 +38,8 @@ AQSA7 (https://github.com/Alssaedy50/AQSA7) is a **conceptual reference only** f
 ## Project documents
 
 - [Detailed page map](docs/design/PAGE_MAP.md)
+- [Interaction inventory](docs/design/INTERACTION_INVENTORY.md)
+- [Design decisions and open questions](docs/design/DECISIONS.md)
 - [Product specification](docs/PRODUCT_SPEC.md)
 - [Verification checklist](docs/VERIFICATION.md)
 - [Preliminary conceptual audit of AQSA7](docs/LEGACY_AUDIT.md)
