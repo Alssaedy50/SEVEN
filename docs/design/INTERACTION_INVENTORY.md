@@ -106,7 +106,7 @@ To keep Release 1 simple, the current page map's P08 Clinic Identity Settings an
 | ST-02 | English clinic name | Edit printed English identity | Optional if English identity is not mandatory; LTR rendering | Proposed |
 | ST-03 | Doctor/specialty/address/contacts | Edit approved receipt identity fields | Validate only what is required for the chosen receipt design | Proposed |
 | ST-04 | Logo upload | Not included unless explicitly approved | Validate type/size; show preview and recover from failure | Not approved |
-| ST-05 | Default currency | Choose currency | Must be supported consistently by formatting and amount-in-words behavior | Decision needed |
+| ST-05 | Default currency | Choose currency | Defaults to YER; alternative choices must be explicitly supported by formatting and amount-in-words behavior | Updated draft; supported list open |
 | ST-06 | Default output profile | Choose from approved output formats | Only show formats that have been implemented and tested | Decision needed |
 | ST-07 | Receipt numbering settings | Configure only if user-facing configuration is needed | Do not expose internal numbering controls unnecessarily | Decision needed |
 | ST-08 | Save settings | Persist settings | Existing/historic receipt behavior after settings changes must be defined | Decision needed |
@@ -131,15 +131,15 @@ To keep Release 1 simple, the current page map's P08 Clinic Identity Settings an
 1. Patient fields: full name only, or full name plus phone? Any other identifier?
 2. Patient deletion: disallow, archive, or permit deletion with confirmation?
 3. Receipt persistence: save as draft before preview, save/issue before preview, or save/issue from preview?
-4. Issued receipt changes: editable, voidable, or immutable?
-5. Currency: which currency/currencies are required for Release 1?
-6. Amount in words: generated automatically, manually entered, or both?
-7. Output formats: PDF only, or PDF plus image/print? Which paper profile(s)?
-8. Historic identity: preserve the clinic identity snapshot at issue time, or reflect current settings?
-9. Storage: single device/local, or multi-device access required at launch?
-10. Logo upload and all-record backup/restore: required now or excluded from Release 1?
-11. Navigation: approve four primary destinations and a consolidated Settings page?
-12. Receipt numbering: automatic sequence; define start, reset policy, and void/cancel behavior.
+4. Define the allowed fields for limited corrections to issued receipts, audit reason/display, and which material changes require void/reissue.
+5. Confirm amount-in-words generation/editing and alternative-currency precision.
+6. Confirm PDF, PNG, print, and share outputs and the A5 layout details.
+7. Confirm whether issued receipts preserve a clinic/patient identity snapshot.
+8. Verify the original logo asset and decide whether logo change/upload belongs in Release 1.
+9. Design manual backup/restore, invalid-file handling, and restore confirmation.
+10. Define the receipt-number sequence, start value, and void/cancel gap behavior.
+11. Review the proposed four-destination navigation and consolidated Settings page.
+12. Decide patient archive/deletion and whether a receipt can name a payer who is not an existing patient.
 
 ## 12. Approval gate
 
