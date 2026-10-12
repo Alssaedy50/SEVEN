@@ -16,7 +16,7 @@ No appointments, clinical notes, diagnoses, prescriptions, inventory, staff acco
 
 ## 2. Design and implementation rules
 
-- SEVEN is a clean-room project: AQSA7 may inform product questions only. Do not copy its code, UI, styling, components, or technical architecture.
+- SEVEN uses only its own approved product requirements and design assets; do not import unrelated code, UI, styling, components, or architecture.
 - Design and approve the page map first, then page wireframes, then control/action specifications, then visual design, and only then implementation.
 - This map is a proposal; the user must approve or amend it before detailed interface design.
 - Mobile-first for Android phone screens; Arabic is primary and right-to-left. English clinic identity and mixed-direction values must render correctly.

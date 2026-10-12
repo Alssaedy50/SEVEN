@@ -6,7 +6,7 @@
 
 Create a new mobile-first application for the dental clinic's administrative needs: patient records and professional receipt creation, preview, export, and history.
 
-AQSA7 is a conceptual reference only. Do not reuse its code, visual design, UI components, styling, or technical architecture. SEVEN must be designed independently.
+SEVEN is developed independently using only its own approved product requirements and design assets.
 
 ## 2. Approved release scope
 

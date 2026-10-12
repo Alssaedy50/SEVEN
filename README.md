@@ -12,7 +12,7 @@ The first-release scope is limited to:
 - Receipt history.
 - Essential clinic and receipt settings.
 
-AQSA7 (https://github.com/Alssaedy50/AQSA7) is a **conceptual reference only** for understanding the problem domain and possible user needs. Do not copy or reuse its code, UI, styles, components, or technical architecture. SEVEN must have its own approved page map, wireframes, interaction specification, and implementation decisions.
+SEVEN is an independent clinic application. Its requirements, approved designs, implementation, and release decisions are maintained within this repository.
 
 ## Design-first process
 
@@ -51,4 +51,3 @@ AQSA7 (https://github.com/Alssaedy50/AQSA7) is a **conceptual reference only** f
 - [Design decisions and open questions](docs/design/DECISIONS.md)
 - [Product specification](docs/PRODUCT_SPEC.md)
 - [Verification checklist](docs/VERIFICATION.md)
-- [Preliminary conceptual audit of AQSA7](docs/LEGACY_AUDIT.md)

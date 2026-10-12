@@ -28,10 +28,9 @@ Use this checklist for every milestone. Mark an item PASS only after the stated 
 - [ ] User approves the wireframes and interaction inventory.
 - [ ] Technical stack is selected only after the above requirements are clear.
 
-## Clean-room rule
+## Project separation and privacy
 
-- [ ] SEVEN does not reuse AQSA7 code, UI, styling, components, or architecture.
-- [ ] AQSA7 notes are used only to formulate product questions and understand the domain.
+- [ ] Current project files contain only SEVEN-specific names, links, assets, and dependencies.
 - [ ] Test data is synthetic; no real patient information is used.
 
 ## Implementation verification (do not start until design gates are approved)

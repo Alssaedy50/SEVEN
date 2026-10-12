@@ -7,7 +7,7 @@
 | ID | Decision | Status |
 |---|---|---|
 | DEC-001 | Release 1 is limited to patient records, receipt creation/management, preview, export/share/print, receipt history, and essential settings. | Approved |
-| DEC-002 | AQSA7 is conceptual reference only. Do not reuse its code, design, components, styling, or architecture. | Approved |
+| DEC-002 | SEVEN uses its own approved requirements, design assets, and implementation decisions. | Approved |
 | DEC-003 | Define and approve pages, wireframes, and interaction behavior before application code. | Approved |
 | DEC-004 | Mobile-first Android use; Arabic-first RTL with correct English LTR. | Approved |
 | DEC-005 | Patient and receipt data are stored locally on the phone in Release 1; users can create a manual backup and restore it. No cloud synchronization in Release 1. | Approved |
