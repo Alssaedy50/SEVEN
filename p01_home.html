@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>عيادة السعيدي لطب وجراحة الفم والأسنان - الرئيسية</title>
+  <style>
+    /* Reset & Base Styles - 100% Offline Self-Contained */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary-navy: #0E2A47;
+      --primary-dark: #081B2E;
+      --accent-cyan: #0284C7;
+      --accent-teal: #00A896;
+      --bg-page: #F6F9FF;
+      --surface-card: #FFFFFF;
+      --surface-subtle: #EEF4FC;
+      --border-light: #E2E8F0;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --whatsapp-green: #25D366;
+      --facebook-blue: #1877F2;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(14, 42, 71, 0.05);
+      --shadow-md: 0 4px 14px rgba(14, 42, 71, 0.08);
+      --shadow-lg: 0 10px 25px rgba(14, 42, 71, 0.12);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      direction: rtl;
+      text-align: right;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background-color: var(--bg-page);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Top Navigation Bar */
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .menu-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .menu-btn:active {
+      transform: scale(0.95);
+      background: #E1EDFA;
+    }
+
+    .brand-block {
+      flex: 1;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.25;
+    }
+
+    .brand-subtitle {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--accent-cyan);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 1px;
+    }
+
+    .brand-doctor {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .brand-logo-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #173b5f 60%, #0c4a6e 100%);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      left: -20px;
+      bottom: -20px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38BDF8;
+      flex-shrink: 0;
+    }
+
+    .hero-text-wrap {
+      flex: 1;
+    }
+
+    .hero-heading {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .hero-desc {
+      font-size: 12px;
+      color: #E2E8F0;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-cyan);
+    }
+
+    /* 2x2 Action Cards Grid (Release 1 Destinations) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .service-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .service-card:active {
+      transform: scale(0.97);
+      box-shadow: none;
+      background-color: #FAFCFF;
+      border-color: var(--accent-cyan);
+    }
+
+    .card-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-blue {
+      background: #E0F2FE;
+      color: #0284C7;
+    }
+
+    .icon-teal {
+      background: #E6FFFA;
+      color: #00A896;
+    }
+
+    .icon-indigo {
+      background: #EEF2FF;
+      color: #4F46E5;
+    }
+
+    .icon-sky {
+      background: #F0F9FF;
+      color: #0369A1;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Clinic Information Section */
+    .clinic-info-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .clinic-info-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .clinic-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--surface-subtle);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .clinic-info-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .clinic-meta-box {
+      background: var(--surface-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .meta-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .meta-value {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* Phones List */
+    .phones-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .phone-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: #FAFBFD;
+      border: 1px solid #EDF2F7;
+      border-radius: var(--radius-md);
+    }
+
+    .phone-number {
+      direction: ltr;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: 0.5px;
+    }
+
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-subtle);
+      color: var(--accent-cyan);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 800;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      transition: all 0.2s ease;
+      min-height: 34px;
+    }
+
+    .call-btn:active {
+      background: var(--accent-cyan);
+      color: #FFFFFF;
+    }
+
+    /* Social / Direct Channels Row */
+    .social-channels-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 4px;
+    }
+
+    .social-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-decoration: none;
+      min-height: 44px;
+      box-shadow: var(--shadow-sm);
+      transition: opacity 0.2s ease, transform 0.1s ease;
+    }
+
+    .social-action-btn:active {
+      transform: scale(0.97);
+      opacity: 0.92;
+    }
+
+    .whatsapp-btn {
+      background-color: var(--whatsapp-green);
+    }
+
+    .facebook-btn {
+      background-color: var(--facebook-blue);
+    }
+
+    /* Footer Note */
+    .app-footer {
+      padding: 16px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      background: #FFFFFF;
+      margin-top: auto;
+    }
+
+    /* Navigation Drawer */
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(14, 42, 71, 0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .drawer-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 290px;
+      max-width: 82vw;
+      height: 100%;
+      background: #FFFFFF;
+      z-index: 101;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -5px 0 25px rgba(14, 42, 71, 0.2);
+    }
+
+    .drawer-panel.active {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 20px 18px;
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #173b5f 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .drawer-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer-logo-wrap {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .drawer-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .drawer-title-main {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .drawer-title-sub {
+      font-size: 10px;
+      color: #93C5FD;
+      font-weight: 700;
+    }
+
+    .drawer-close-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .drawer-menu-list {
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .drawer-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .drawer-menu-item:hover, .drawer-menu-item:active {
+      background: var(--surface-subtle);
+    }
+
+    .drawer-menu-item.active {
+      background: #EFF6FF;
+      color: var(--accent-cyan);
+      font-weight: 800;
+      border-color: #BFDBFE;
+    }
+
+    .drawer-item-icon {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .drawer-footer {
+      padding: 16px;
+      background: var(--surface-subtle);
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .drawer-footer-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .drawer-footer-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* Toast Notification for Unconnected Release 1 Mock Links */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 50%;
+      transform: translateX(50%) translateY(100px);
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      z-index: 200;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .toast-msg.show {
+      transform: translateX(50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Top App Bar -->
+    <header class="top-header">
+      <button class="menu-btn" id="openDrawerBtn" aria-label="فتح القائمة الجانبية">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="brand-block">
+        <h1 class="brand-title">عيادة السعيدي لطب وجراحة الفم والأسنان</h1>
+        <div class="brand-subtitle">ALSSAEDY CLINIC FOR DENTISTRY</div>
+        <div class="brand-doctor">د/ صلاح الدين السعيدي</div>
+      </div>
+
+      <div class="brand-logo-wrap">
+        <img class="brand-logo-img" src="assets/logo.png" alt="شعار عيادة السعيدي">
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Hero Overview Banner (Clean & Functional) -->
+      <section class="hero-banner">
+        <div class="hero-icon-box">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <div class="hero-text-wrap">
+          <h2 class="hero-heading">نظام إدارة العيادة السريرية</h2>
+          <p class="hero-desc">إدارة ملفات المرضى وإصدار سندات القبض المالية</p>
+        </div>
+      </section>
+
+      <!-- Section Title -->
+      <div class="section-header">
+        <h3 class="section-title">
+          <span class="section-dot"></span>
+          خدمات النظام الرئيسية
+        </h3>
+      </div>
+
+      <!-- Release 1: Exact 4 Destinations Grid -->
+      <div class="services-grid">
+
+        <!-- Card 1: تسجيل مريض جديد -->
+        <a href="javascript:void(0)" class="service-card" onclick="handleNavigation('تسجيل مريض جديد')">
+          <div class="card-icon-wrap icon-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+          </div>
+          <div class="card-title">تسجيل مريض جديد</div>
+          <div class="card-desc">إضافة ملف ومتابعة جديدة</div>
+        </a>
+
+        <!-- Card 2: قائمة المرضى والبحث -->
+        <a href="javascript:void(0)" class="service-card" onclick="handleNavigation('قائمة المرضى والبحث')">
+          <div class="card-icon-wrap icon-sky">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <circle cx="11" cy="9" r="2.5"></circle>
+              <path d="M7 15a4 4 0 0 1 8 0"></path>
+            </svg>
+          </div>
+          <div class="card-title">قائمة المرضى والبحث</div>
+          <div class="card-desc">البحث في السجلات والتفاصيل</div>
+        </a>
+
+        <!-- Card 3: إنشاء سند قبض -->
+        <a href="javascript:void(0)" class="service-card" onclick="handleNavigation('إنشاء سند قبض')">
+          <div class="card-icon-wrap icon-teal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14M5 12h14"></path>
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <div class="card-title">إنشاء سند قبض</div>
+          <div class="card-desc">إصدار سند مالي جديد</div>
+        </a>
+
+        <!-- Card 4: سجل السندات -->
+        <a href="javascript:void(0)" class="service-card" onclick="handleNavigation('سجل السندات')">
+          <div class="card-icon-wrap icon-indigo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <div class="card-title">سجل السندات</div>
+          <div class="card-desc">أرشيف المقبوضات والمطابقة</div>
+        </a>
+
+      </div>
+
+      <!-- Clinic Information Section (Verbatim details without unsupported claims) -->
+      <section class="clinic-info-card">
+        <div class="clinic-info-header">
+          <div class="clinic-badge-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="clinic-info-title">معلومات وبيانات التواصل</div>
+        </div>
+
+        <div class="clinic-meta-box">
+          <div class="meta-col">
+            <span class="meta-label">الموقع الجغرافي</span>
+            <span class="meta-value">ريمة - كسمة - عزلة الضبارة</span>
+          </div>
+          <div class="meta-col">
+            <span class="meta-label">الطبيب المشرف</span>
+            <span class="meta-value">د/ صلاح الدين السعيدي</span>
+          </div>
+        </div>
+
+        <!-- Official Direct Numbers -->
+        <div class="phones-list">
+          <div class="phone-item">
+            <span class="phone-number">+967 716 339 366</span>
+            <a href="tel:+967716339366" class="call-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>اتصال</span>
+            </a>
+          </div>
+
+          <div class="phone-item">
+            <span class="phone-number">+967 739 550 138</span>
+            <a href="tel:+967739550138" class="call-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>اتصال</span>
+            </a>
+          </div>
+
+          <div class="phone-item">
+            <span class="phone-number">+967 775 956 520</span>
+            <a href="tel:+967775956520" class="call-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>اتصال</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Channels Buttons -->
+        <div class="social-channels-row">
+          <a href="https://wa.me/967775956520" target="_blank" rel="noopener noreferrer" class="social-action-btn whatsapp-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.76.46 3.42 1.27 4.86L2 22l5.28-1.38A9.96 9.96 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2zm0 18.18c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.13.82.84-3.05-.2-.31A8.14 8.14 0 1 1 12.04 20.18zm4.47-6.1c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.56.13-.17.25-.65.81-.8.97-.15.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.39.11-.52.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.61c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.42 1.43.54.6.19 1.15.17 1.58.1.48-.07 1.48-.6 1.69-1.19.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z"/>
+            </svg>
+            <span>واتساب العيادة</span>
+          </a>
+          <button type="button" class="social-action-btn facebook-btn"
+            onclick="showToast('رابط فيسبوك غير مضبوط؛ أضفه من الإعدادات')"
+            aria-label="رابط فيسبوك العيادة">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.016 10.125 11.896v-8.41H7.078v-3.486h3.047V9.41c0-3.017 1.792-4.687 4.533-4.687 1.312 0 2.686.236 2.686.236v2.953h-1.513c-1.491 0-1.956.931-1.956 1.887v2.274h3.328l-.532 3.486h-2.796v8.41C19.612 23.089 24 18.092 24 12.073z"/>
+            </svg>
+            <span>فيسبوك العيادة</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- App Bottom Footer -->
+    <footer class="app-footer">
+      <div>عيادة السعيدي لطب وجراحة الفم والأسنان</div>
+      <div style="margin-top: 2px; color: #94A3B8;"></div>
+    </footer>
+
+    <!-- Interactive Navigation Drawer (Strictly 4 Items) -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <aside class="drawer-panel" id="drawerPanel" aria-label="القائمة الجانبية">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <div class="drawer-logo-wrap">
+            <img src="assets/logo.png" alt="شعار العيادة">
+          </div>
+          <div>
+            <div class="drawer-title-main">عيادة السعيدي</div>
+            <div class="drawer-title-sub">طب وجراحة الأسنان</div>
+          </div>
+        </div>
+        <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="drawer-menu-list">
+        <!-- Item 1: الرئيسية -->
+        <a href="javascript:void(0)" class="drawer-menu-item active" onclick="closeDrawer()">
+          <span class="drawer-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </span>
+          <span>الرئيسية</span>
+        </a>
+
+        <!-- Item 2: إدارة وسجل المرضى -->
+        <a href="javascript:void(0)" class="drawer-menu-item" onclick="handleNavigation('إدارة وسجل المرضى')">
+          <span class="drawer-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </span>
+          <span>إدارة وسجل المرضى</span>
+        </a>
+
+        <!-- Item 3: سندات القبض والمالية -->
+        <a href="javascript:void(0)" class="drawer-menu-item" onclick="handleNavigation('سندات القبض والمالية')">
+          <span class="drawer-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </span>
+          <span>سندات القبض والمالية</span>
+        </a>
+
+        <!-- Item 4: الإعدادات والنسخ الاحتياطي -->
+        <a href="javascript:void(0)" class="drawer-menu-item" onclick="handleNavigation('الإعدادات والنسخ الاحتياطي')">
+          <span class="drawer-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </span>
+          <span>الإعدادات والنسخ الاحتياطي</span>
+        </a>
+      </nav>
+
+      <div class="drawer-footer">
+        <div class="drawer-footer-title">د/ صلاح الدين السعيدي</div>
+        <div class="drawer-footer-sub">ريمة - كسمة - عزلة الضبارة</div>
+      </div>
+    </aside>
+
+    <!-- Feedback Toast for previewing actions -->
+    <div class="toast-msg" id="toastMessage">جاري التحويل...</div>
+  </div>
+
+  <script>
+    // Drawer Elements
+    const openDrawerBtn = document.getElementById('openDrawerBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerPanel = document.getElementById('drawerPanel');
+    const toastMessage = document.getElementById('toastMessage');
+
+    function openDrawer() {
+      drawerOverlay.classList.add('active');
+      drawerPanel.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawerOverlay.classList.remove('active');
+      drawerPanel.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (openDrawerBtn) openDrawerBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+    // Toast notification handler for destinations
+    function showToast(text) {
+      toastMessage.textContent = text;
+      toastMessage.classList.add('show');
+      setTimeout(() => {
+        toastMessage.classList.remove('show');
+      }, 2400);
+    }
+
+    function handleNavigation(title) {
+      closeDrawer();
+      showToast('قسم ' + title + ' — جاهز للربط في الإصدار 1');
+    }
+
+    // Keyboard support (Escape closes drawer)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeDrawer();
+      }
+    });
+  </script>
+</body>
+</html>
