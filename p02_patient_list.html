@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>دليل المرضى (P02) - عيادة السعيدي لطب الأسنان</title>
+  <!-- Google Fonts: Cairo for headings, Noto Sans Arabic for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: '#0E2A47',
+            brandNavyDark: '#07182a',
+            brandCyan: '#00B4D8',
+            brandTeal: '#00897B',
+            brandTealDark: '#00695C',
+            surfaceBg: '#F8FAFC',
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            noto: ['Noto Sans Arabic', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Noto Sans Arabic', sans-serif;
+      background-color: #F8FAFC;
+      -webkit-tap-highlight-color: transparent;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Cairo', sans-serif;
+    }
+    /* Hide scrollbar for tabs/chips */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen text-slate-800 antialiased selection:bg-brandCyan/20 selection:text-brandNavy">
+
+  <!-- Mobile Viewport Wrapper (Max-w-md mx-auto matching P01/P03/P04) -->
+  <div x-data="{ 
+         searchQuery: '',
+         activeFilter: 'all',
+         patients: [
+           { id: '1042', name: 'محمد عبدالله السعيدي', phone: '+967 771 234 567', gender: 'm', recent: true },
+           { id: '0983', name: 'فاطمة أحمد القدسي', phone: '+967 777 982 104', gender: 'f', recent: true },
+           { id: '1210', name: 'عمر خالد الشميري', phone: '+967 733 456 789', gender: 'm', recent: false },
+           { id: '1419', name: 'سارة محمد الحكيمي', phone: '+967 711 889 012', gender: 'f', recent: true },
+           { id: '1085', name: 'عبدالرحمن طه الحمادي', phone: '+967 770 112 334', gender: 'm', recent: false },
+           { id: '1302', name: 'مها نبيل العديني', phone: '+967 775 667 889', gender: 'f', recent: false },
+           { id: '1154', name: 'وليد علي الأصبحي', phone: '+967 735 990 123', gender: 'm', recent: false }
+         ],
+         get filteredPatients() {
+           let list = this.patients;
+           if (this.activeFilter === 'recent') {
+             list = list.filter(p => p.recent);
+           } else if (this.activeFilter === 'alpha') {
+             list = [...list].sort((a, b) => a.name.localeCompare(b.name, 'ar'));
+           }
+           if (this.searchQuery.trim() !== '') {
+             const q = this.searchQuery.trim().toLowerCase();
+             list = list.filter(p => 
+               p.name.toLowerCase().includes(q) || 
+               p.phone.replace(/\s+/g, '').includes(q.replace(/\s+/g, '')) || 
+               p.id.includes(q)
+             );
+           }
+           return list;
+         }
+       }" 
+       class="relative max-w-md mx-auto min-h-screen bg-surfaceBg shadow-2xl flex flex-col pb-24 overflow-x-hidden border-x border-slate-200/60">
+
+    <!-- 1. App Bar (Header) -->
+    <header class="sticky top-0 z-30 bg-brandNavy text-white shadow-md">
+      <div class="flex items-center justify-between px-4 h-16">
+        
+        <!-- Right side (in RTL): User Profile / Logo icon -->
+        <div class="flex items-center gap-3">
+          <button type="button" 
+                  aria-label="الملف الشخصي للطبيب" 
+                  class="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 transition flex items-center justify-center border border-white/10 text-white">
+            <span class="font-cairo font-bold text-sm tracking-wide text-brandCyan">د.ص</span>
+          </button>
+          <div>
+            <h1 class="font-cairo font-bold text-lg leading-tight tracking-tight text-white">دليل المرضى</h1>
+            <p class="text-[11px] text-slate-300 font-medium">عيادة السعيدي لطب الأسنان</p>
+          </div>
+        </div>
+
+        <!-- Left side (in RTL): Minimal Notification icon -->
+        <div class="flex items-center">
+          <button type="button" 
+                  aria-label="الإشعارات والتنبيهات" 
+                  class="relative w-12 h-12 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 transition flex items-center justify-center text-white border border-white/10">
+            <svg class="w-5 h-5 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <!-- Notification dot indicator -->
+            <span class="absolute top-3 left-3 w-2 h-2 rounded-full bg-brandCyan ring-2 ring-brandNavy"></span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- 2. Sticky Search & Filter Section -->
+    <div class="sticky top-16 z-20 bg-surfaceBg/95 backdrop-blur-md pt-3 pb-2 px-4 border-b border-slate-200/80 shadow-sm">
+      
+      <!-- Search Input Container -->
+      <div class="relative flex items-center mb-2.5">
+        <!-- Search icon (aligned on right for RTL) -->
+        <div class="absolute right-3.5 flex items-center pointer-events-none text-slate-400">
+          <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+          </svg>
+        </div>
+
+        <input type="text"
+               x-model="searchQuery"
+               placeholder="ابحث باسم المريض أو رقم الهاتف..."
+               aria-label="البحث في دليل المرضى"
+               class="w-full h-12 pr-11 pl-11 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brandCyan/40 focus:border-brandCyan transition shadow-sm">
+
+        <!-- Clear 'X' Button (visible only when search query is not empty) -->
+        <button type="button"
+                x-show="searchQuery.length > 0"
+                x-transition:enter="transition ease-out duration-150"
+                x-transition:enter-start="opacity-0 scale-75"
+                x-transition:enter-end="opacity-100 scale-100"
+                @click="searchQuery = ''"
+                aria-label="مسح نص البحث"
+                class="absolute left-1.5 w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition active:scale-95"
+                style="display: none;">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Quick Sorting / Filtering Chips Row (Strictly Non-Financial) -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+        
+        <!-- Chip 1: الكل -->
+        <button type="button"
+                @click="activeFilter = 'all'"
+                :class="activeFilter === 'all' 
+                  ? 'bg-brandNavy text-white font-bold shadow-sm ring-1 ring-brandNavy' 
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 font-medium'"
+                class="h-9 px-4 rounded-lg text-xs tracking-wide shrink-0 transition flex items-center justify-center active:scale-95">
+          <span>الكل</span>
+          <span class="mr-1.5 text-[11px] px-1.5 py-0.2 rounded-full font-bold" 
+                :class="activeFilter === 'all' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'" 
+                x-text="patients.length"></span>
+        </button>
+
+        <!-- Chip 2: المضافين حديثاً -->
+        <button type="button"
+                @click="activeFilter = 'recent'"
+                :class="activeFilter === 'recent' 
+                  ? 'bg-brandNavy text-white font-bold shadow-sm ring-1 ring-brandNavy' 
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 font-medium'"
+                class="h-9 px-3.5 rounded-lg text-xs tracking-wide shrink-0 transition flex items-center gap-1.5 active:scale-95">
+          <svg class="w-3.5 h-3.5" :class="activeFilter === 'recent' ? 'text-brandCyan' : 'text-slate-400'" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>المضافين حديثاً</span>
+        </button>
+
+        <!-- Chip 3: ترتيب أبجدي -->
+        <button type="button"
+                @click="activeFilter = 'alpha'"
+                :class="activeFilter === 'alpha' 
+                  ? 'bg-brandNavy text-white font-bold shadow-sm ring-1 ring-brandNavy' 
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 font-medium'"
+                class="h-9 px-3.5 rounded-lg text-xs tracking-wide shrink-0 transition flex items-center gap-1.5 active:scale-95">
+          <svg class="w-3.5 h-3.5" :class="activeFilter === 'alpha' ? 'text-brandCyan' : 'text-slate-400'" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+          </svg>
+          <span>ترتيب أبجدي</span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- 3. Patient List (The Feed) -->
+    <main class="flex-1 px-4 pt-3 space-y-2.5">
+      
+      <!-- Sub-header info: count -->
+      <div class="flex items-center justify-between text-xs text-slate-500 px-1 pb-0.5">
+        <span class="font-medium">سجلات المرضى المعتمدة</span>
+        <span class="font-cairo font-semibold text-brandNavy" x-text="filteredPatients.length + ' مريض'"></span>
+      </div>
+
+      <!-- Dynamic Cards Loop -->
+      <template x-for="patient in filteredPatients" :key="patient.id">
+        <article class="group bg-white rounded-xl border border-slate-200/90 p-3.5 shadow-sm hover:shadow hover:border-slate-300 transition duration-150 cursor-pointer active:scale-[0.99]"
+                 tabindex="0"
+                 role="button"
+                 aria-label="عرض الملف الشخصي للمريض">
+          
+          <div class="flex items-center justify-between gap-3">
+            
+            <!-- Right side (in RTL): Avatar + Identity details -->
+            <div class="flex items-center gap-3 min-w-0">
+              
+              <!-- Clean Monogram Avatar -->
+              <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200/80 flex items-center justify-center shrink-0 group-hover:bg-slate-50 transition">
+                <span class="font-cairo font-bold text-base text-brandNavy" x-text="patient.name.charAt(0)"></span>
+              </div>
+
+              <!-- Name, Phone, and File Number (Strictly NO Financial Data) -->
+              <div class="min-w-0">
+                <div class="flex items-center gap-2">
+                  <h2 class="font-cairo font-bold text-sm text-brandNavy truncate leading-tight group-hover:text-brandTeal transition" 
+                      x-text="patient.name"></h2>
+                </div>
+                
+                <div class="flex items-center gap-2.5 mt-1">
+                  <!-- Phone Number strictly LTR formatted -->
+                  <span class="inline-flex items-center text-xs font-mono text-slate-500 font-medium tracking-tight" 
+                        dir="ltr" 
+                        x-text="patient.phone"></span>
+
+                  <!-- File Number Badge -->
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-cairo font-semibold text-[10px] tracking-wide"
+                        x-text="'#' + patient.id"></span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Left side (in RTL): Navigation Chevron (indicating opening P03) -->
+            <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg text-slate-400 group-hover:text-brandTeal group-hover:bg-teal-50 transition">
+              <!-- Chevron pointing left in RTL to indicate drilling down into P03 -->
+              <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </div>
+
+          </div>
+
+        </article>
+      </template>
+
+      <!-- Empty Search Result State -->
+      <div x-show="filteredPatients.length === 0" 
+           class="py-12 text-center flex flex-col items-center justify-center bg-white rounded-2xl border border-dashed border-slate-200 p-6 my-4"
+           style="display: none;">
+        <div class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400 mb-3">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h3 class="font-cairo font-bold text-slate-700 text-sm">لا توجد نتائج مطابقة للبحث</h3>
+        <p class="text-xs text-slate-400 mt-1 max-w-xs">تأكد من كتابة الاسم أو رقم الهاتف بشكل صحيح، أو أضف مريضاً جديداً للمنظومة.</p>
+        <button type="button" 
+                @click="searchQuery = ''; activeFilter = 'all'" 
+                class="mt-4 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-brandNavy font-cairo text-xs font-semibold rounded-lg transition active:scale-95">
+          إعادة ضبط البحث
+        </button>
+      </div>
+
+      <!-- Subtle End of Results Message -->
+      <div x-show="filteredPatients.length > 0" class="pt-4 pb-2 text-center">
+        <p class="text-xs text-slate-400 font-medium flex items-center justify-center gap-2">
+          <span class="w-6 h-px bg-slate-200"></span>
+          <span>لا توجد نتائج أخرى</span>
+          <span class="w-6 h-px bg-slate-200"></span>
+        </p>
+      </div>
+
+    </main>
+
+    <!-- 4. Floating Action Button (FAB) - Bottom-Left Placement above bottom nav -->
+    <!-- Positioned fixed relative to bottom for thumb ergonomics on Android -->
+    <div class="fixed bottom-20 left-1/2 -translate-x-1/2 w-full max-w-md pointer-events-none z-30 px-4">
+      <div class="flex justify-start">
+        <button type="button" 
+                aria-label="إضافة مريض جديد (فتح P03)"
+                class="pointer-events-auto h-14 px-5 rounded-2xl bg-brandTeal hover:bg-brandTealDark text-white shadow-lg shadow-brandTeal/30 hover:shadow-xl transition-all duration-200 flex items-center gap-2.5 active:scale-95 group border border-teal-400/20">
+          <!-- Person Add Icon -->
+          <svg class="w-6 h-6 text-white group-hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+          </svg>
+          <span class="font-cairo font-bold text-sm tracking-wide">إضافة مريض</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 5. Bottom Navigation Bar (Fixed 4 Destination Tabs, height 64px) -->
+    <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-slate-200/90 shadow-lg z-40">
+      <div class="grid grid-cols-4 h-16 items-center px-1">
+        
+        <!-- Tab 1: الرئيسية -->
+        <a href="#home" 
+           class="flex flex-col items-center justify-center h-full text-slate-400 hover:text-slate-600 active:scale-95 transition">
+          <svg class="w-5 h-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span class="font-cairo text-[11px] font-medium leading-none">الرئيسية</span>
+        </a>
+
+        <!-- Tab 2: المرضى (ACTIVE STATE: Highlighted Brand Cyan) -->
+        <a href="#patients" 
+           class="relative flex flex-col items-center justify-center h-full text-brandNavy active:scale-95 transition">
+          <!-- Active top indicator bar -->
+          <span class="absolute top-0 inset-x-4 h-0.5 bg-brandCyan rounded-b-full"></span>
+          
+          <div class="relative">
+            <svg class="w-5 h-5 mb-1 text-brandNavy" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+          <span class="font-cairo text-[11px] font-bold text-brandCyan leading-none">المرضى</span>
+        </a>
+
+        <!-- Tab 3: السجل -->
+        <a href="#records" 
+           class="flex flex-col items-center justify-center h-full text-slate-400 hover:text-slate-600 active:scale-95 transition">
+          <svg class="w-5 h-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span class="font-cairo text-[11px] font-medium leading-none">السجل</span>
+        </a>
+
+        <!-- Tab 4: الإعدادات -->
+        <a href="#settings" 
+           class="flex flex-col items-center justify-center h-full text-slate-400 hover:text-slate-600 active:scale-95 transition">
+          <svg class="w-5 h-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="font-cairo text-[11px] font-medium leading-none">الإعدادات</span>
+        </a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</body>
+</html>
