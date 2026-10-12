@@ -1,0 +1,46 @@
+name: Validate SEVEN app
+
+on:
+  pull_request:
+    paths:
+      - "app/**"
+      - "scripts/check_seven_app.py"
+      - "tests/**"
+      - "package.json"
+      - "playwright.config.js"
+      - ".github/workflows/validate-seven.yml"
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "scripts/check_seven_app.py"
+      - "tests/**"
+      - "package.json"
+      - "playwright.config.js"
+      - ".github/workflows/validate-seven.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check HTML, JavaScript, manifest, and static references
+        run: python scripts/check_seven_app.py
+      - name: Install Playwright test runner
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser acceptance tests
+        run: npm run test:e2e
