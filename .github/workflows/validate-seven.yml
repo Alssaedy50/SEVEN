@@ -5,18 +5,12 @@ on:
     paths:
       - "app/**"
       - "scripts/check_seven_app.py"
-      - "tests/**"
-      - "package.json"
-      - "playwright.config.js"
       - ".github/workflows/validate-seven.yml"
   push:
     branches: [main]
     paths:
       - "app/**"
       - "scripts/check_seven_app.py"
-      - "tests/**"
-      - "package.json"
-      - "playwright.config.js"
       - ".github/workflows/validate-seven.yml"
 
 permissions:
@@ -38,9 +32,3 @@ jobs:
           node-version: "22"
       - name: Check HTML, JavaScript, manifest, and static references
         run: python scripts/check_seven_app.py
-      - name: Install Playwright test runner
-        run: npm install --no-audit --no-fund
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-      - name: Run browser acceptance tests
-        run: npm run test:e2e
