@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;font-family:'IBM Plex Sans',sans-serif;background-color:#f8f9ff;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-container":"#007bb9","primary-fixed":"#cce5ff","outline-variant":"#bfc7d2","on-secondary":"#ffffff","error-container":"#ffdad6","on-primary-fixed-variant":"#004b73","on-tertiary-fixed-variant":"#005048","on-secondary-fixed-variant":"#2f4867","secondary-fixed-dim":"#afc8ed","error":"#ba1a1a","secondary":"#476080","tertiary-fixed-dim":"#70d8c8","tertiary":"#00685d","surface-container-low":"#eff4ff","surface-container":"#e5eeff","surface-bright":"#f8f9ff","surface-dim":"#cbdbf5","on-error-container":"#93000a","surface-container-high":"#dce9ff","tertiary-container":"#008376","on-surface":"#0b1c30","surface-variant":"#d3e4fe","on-primary":"#ffffff","primary-fixed-dim":"#93ccff","secondary-container":"#c0d9fe","primary":"#006194","on-secondary-fixed":"#001c38","on-background":"#0b1c30","tertiary-fixed":"#8df5e4","on-primary-container":"#fdfcff","surface-container-lowest":"#ffffff","surface-tint":"#006398","inverse-primary":"#93ccff","surface-container-highest":"#d3e4fe","secondary-fixed":"#d2e4ff","surface":"#f8f9ff","inverse-on-surface":"#eaf1ff","on-primary-fixed":"#001d31","on-tertiary":"#ffffff","on-tertiary-container":"#f4fffb","on-surface-variant":"#3f4850","on-secondary-container":"#465f7f","outline":"#707881","on-error":"#ffffff","background":"#f8f9ff","inverse-surface":"#213145","on-tertiary-fixed":"#00201c"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-lg":"1.5rem","margin":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-md":"1rem","gutter":"1rem","space-2xl":"3rem","gutter-desktop":"1.5rem","margin-desktop":"2rem"},"fontFamily":{"headline-lg":["IBM Plex Sans"],"label-md":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"label-lg":["IBM Plex Sans"],"body-lg":["IBM Plex Sans"],"headline-xl-mobile":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],"headline-md":["IBM Plex Sans"],"label-sm":["IBM Plex Sans"],"headline-sm":["IBM Plex Sans"],"headline-xl":["IBM Plex Sans"]},"fontSize":{"headline-lg":["1.5rem",{"lineHeight":"2rem","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.625rem","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","fontWeight":"700"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","fontWeight":"400"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","fontWeight":"500"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","fontWeight":"700"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex flex-col selection:bg-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(11,28,48,0.04)]"><div class="max-w-md mx-auto h-16 px-4 flex items-center justify-between gap-3"><div class="flex items-center gap-2 min-w-0 flex-1"><button aria-label="رجوع" class="w-11 h-11 -mr-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_forward</span></button><img alt="logo.png" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VwRs7J9SWcWkJUI-nTKcPkrfngeriZq-h9WGxhQGTFpLSZdp6EO4tlvsa7FS42c1qyeZloqEgaoYMw4jcDtLkvp6PONc22vKLvS52v7I4CmXrFPTkeexuGby-VkB1cWwVUMniYF0zyxa9hkN3UWGIza_IfeyoBpBAg8oXzhYBT962pX1g4HBakxU71KrpPJhmsreL4bIEXRwbj44ze_f3HeEXoWu2eZXdRAVJ2LbN0EOzylvETALrdE_MWwAz2fsJ0I1qOp87HjA"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">New Receipt</span><span class="font-label-sm text-label-sm text-secondary truncate">د/ صلاح الدين السعيدي</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col w-full max-w-md mx-auto px-4 pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-8 space-y-4">
+<!-- Voucher Stamp Hero Header -->
+<div class="relative bg-gradient-to-l from-primary-container to-primary rounded-xl p-4 text-on-primary shadow-md overflow-hidden">
+<div class="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-on-primary font-label-sm text-label-sm w-fit backdrop-blur-sm mb-1.5">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          نظام العيادة المالي الرسمي
+        </span>
+<h2 class="font-headline-md text-headline-md font-bold tracking-tight">إنشاء سند قبض مالي</h2>
+<p class="font-body-sm text-body-sm text-primary-fixed mt-0.5">مطابق للنموذج المعتمد لعيادة د. صلاح الدين السعيدي</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest/15 backdrop-blur-md flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[28px] text-white">receipt_long</span>
+</div>
+</div>
+</div>
+<!-- Receipt Metadata Strip (Card) -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm space-y-3">
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Receipt Number Display -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tag</span>
+          رقم السند التلقائي
+        </span>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface tracking-wider dir-ltr">#REC-2024-0518</span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<!-- Receipt Date Field -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-secondary mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+          تاريخ السند
+        </span>
+<div class="flex items-center justify-between font-label-lg text-label-lg font-semibold text-on-surface">
+<span>15 / 11 / 2024 م</span>
+<button aria-label="تعديل التاريخ" class="text-primary hover:text-primary-container p-0.5 rounded" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Patient Selection Section -->
+<div class="pt-1">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">person_search</span>
+          استلمنا من المريض / العميل
+        </label>
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">person_add</span>
+          + مريض جديد
+        </button>
+</div>
+<!-- Selected Patient Active Badge -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-base shrink-0 shadow-sm">
+            أك
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">أحمد محمد الكبسي</span>
+<span class="px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-semibold">ملف نشط</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary dir-ltr text-right truncate">+967 771 458 101</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface hover:bg-surface-container-high text-secondary hover:text-on-surface transition-colors shrink-0" title="تغيير المريض" type="button">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Financial Amounts Box -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+        المبلغ والعملة
+      </h3>
+<div class="flex items-center gap-1 text-[11px] font-medium text-secondary bg-surface-container px-2 py-0.5 rounded-full">
+<span>العملة الافتراضية:</span>
+<strong class="text-primary font-semibold">ريال يمني (YER)</strong>
+</div>
+</div>
+<!-- Main Amount Input -->
+<div>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-low text-on-surface text-xl font-bold py-3 pr-4 pl-24 rounded-lg focus:outline-none focus:bg-surface-container-highest transition-colors text-right" id="amount-num" inputmode="numeric" placeholder="0.00" type="number" value="24000"/>
+<div class="absolute left-2.5 flex items-center gap-1 bg-surface-container-highest px-2.5 py-1.5 rounded-md text-primary font-bold text-xs select-none">
+<span class="material-symbols-outlined text-[14px]">price_change</span>
+<span>ريال يمني</span>
+</div>
+</div>
+</div>
+<!-- Amount in Arabic Words (Tafqeet) -->
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">format_quote</span>
+          المبلغ كتابةً (تلقائي)
+        </span>
+<button class="text-primary text-[11px] font-medium hover:underline flex items-center gap-0.5" id="btn-reconvert" type="button">
+<span class="material-symbols-outlined text-[13px]">refresh</span>
+          تحديث النص
+        </button>
+</div>
+<p class="font-body-md text-body-md font-semibold text-primary-container leading-relaxed" id="amount-words">
+        أربعة وعشرون ألف ريال يمني فقط لا غير.
+      </p>
+</div>
+<!-- Payment Method Selector -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_balance_wallet</span>
+        طريقة الدفع المستلمة
+      </label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all" id="tab-cash">
+<input class="text-primary focus:ring-0 w-4 h-4" name="payment_method" type="radio" value="cash"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">نقداً (كاش)</span>
+<span class="text-[11px] text-secondary">استلام مباشر بالصندوق</span>
+</div>
+</label>
+<label class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container cursor-pointer transition-all shadow-sm" id="tab-transfer">
+<input checked="" class="text-primary focus:ring-0 w-4 h-4" name="payment_method" type="radio" value="transfer"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">محفظة / بنك</span>
+<span class="text-[11px] text-secondary">إلكتروني أو حوالة</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Conditional Transfer Fields (Visible when Transfer Selected) -->
+<div class="bg-surface-container p-3.5 rounded-lg space-y-3 transition-all duration-300" id="transfer-details-box">
+<div class="flex items-center gap-1.5 pb-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span class="font-label-sm text-label-sm font-bold">بيانات الحوالة / المحفظة الإلكترونية</span>
+</div>
+<div class="space-y-2.5">
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">اسم المحفظة أو البنك</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest text-on-surface text-sm font-medium py-2.5 pr-3 pl-8 rounded-lg focus:outline-none appearance-none">
+<option value="kuraimi">الكريمي (حساب / محفظة كريمي جوال)</option>
+<option value="jeeb">محفظة جيب (Jeeb)</option>
+<option value="onecash">ون كاش (OneCash)</option>
+<option value="floosak">فلوسك (Floosak / بنك اليمن والكويت)</option>
+<option value="tadamon">التضامن باي (Tadamon Pay)</option>
+<option value="other">بنك / صراف آخر</option>
+</select>
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">اسم المرسل</label>
+<input class="w-full bg-surface-container-lowest text-on-surface text-sm py-2 px-3 rounded-lg focus:outline-none text-right font-medium" placeholder="الاسم كما بالحوالة" type="text" value="أحمد محمد الكبسي"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">رقم المرجع / الحوالة</label>
+<input class="w-full bg-surface-container-lowest text-on-surface text-sm py-2 px-3 rounded-lg focus:outline-none text-right font-mono font-medium dir-ltr" placeholder="Reference No." type="text" value="TX-99482103"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Treatment Service Category Checklist (From printed receipt format) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">dentistry</span>
+          تفاصيل الخدمة العلاجية المقدمة
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">حدد الإجراءات المشمولة في هذا السند</p>
+</div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary" id="selected-counter">2 محدد</span>
+</div>
+<!-- Category Grid Matching Voucher -->
+<div class="grid grid-cols-2 gap-2 pt-1" id="treatment-checklist">
+<!-- Item 1 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">كشف ومعاينة</span>
+</label>
+<!-- Item 2 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-highest cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input checked="" class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-bold text-primary">حشوات وتجميل</span>
+</label>
+<!-- Item 3 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-highest cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input checked="" class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-bold text-primary">علاج عصب وجذور</span>
+</label>
+<!-- Item 4 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">خلع وجراحة</span>
+</label>
+<!-- Item 5 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">تنظيف وتجليح لثة</span>
+</label>
+<!-- Item 6 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">تركيبات أسنان</span>
+</label>
+<!-- Item 7 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">أشعة تشخيصية</span>
+</label>
+<!-- Item 8 -->
+<label class="service-chip flex items-center gap-2.5 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary rounded focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">تقويم أسنان</span>
+</label>
+</div>
+<!-- Custom / Other Service Input -->
+<div class="pt-1">
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-secondary">add_circle_outline</span>
+<input class="w-full bg-transparent text-sm text-on-surface placeholder:text-outline focus:outline-none text-right font-medium" placeholder="خدمات أخرى (اكتب تفاصيل إضافية إن وجدت)..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Financial Ledger Quick Balance (Voucher Summary Panel) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-2.5">
+<span class="font-label-md text-label-md font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+      خلاصة الحساب الإجمالي بعد هذا السند
+    </span>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-surface-container-low p-2 rounded-lg flex flex-col">
+<span class="text-[11px] font-medium text-secondary">إجمالي الخطة</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">45,000</span>
+<span class="text-[9px] text-outline">ر.ي</span>
+</div>
+<div class="bg-surface-container-highest p-2 rounded-lg flex flex-col">
+<span class="text-[11px] font-medium text-primary">المسدد حالياً</span>
+<span class="font-label-lg text-label-lg font-bold text-primary mt-1">24,000</span>
+<span class="text-[9px] text-primary">ر.ي</span>
+</div>
+<div class="bg-error-container/30 p-2 rounded-lg flex flex-col">
+<span class="text-[11px] font-medium text-error">المتبقي</span>
+<span class="font-label-lg text-label-lg font-bold text-error mt-1">21,000</span>
+<span class="text-[9px] text-error">ر.ي</span>
+</div>
+</div>
+</div>
+<!-- Multi-line Notes Field -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">edit_note</span>
+      ملاحظات إضافية على السند
+    </label>
+<textarea class="w-full bg-surface-container-low text-on-surface text-sm p-3 rounded-lg focus:outline-none focus:bg-surface-container-highest transition-colors resize-none text-right font-normal placeholder:text-outline" placeholder="أدخل أي ملاحظات خاصة بالسداد، الجلسة القادمة، أو الخصم المعتمد..." rows="2"></textarea>
+</div>
+<!-- Duplicate Guard & Security Notice -->
+<div class="flex items-start gap-2 bg-surface-container-low p-3 rounded-xl">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">shield_with_heart</span>
+<div class="text-xs text-secondary leading-relaxed">
+<strong class="font-semibold text-on-surface">حماية النظام المالي:</strong> يتم قفل رقم السند فور الضغط على الحفظ لمنع التكرار، وسيتم توثيق التوقيع باسم المحاسب المسؤول تلقائياً.
+    </div>
+</div>
+<!-- Action Buttons Stack -->
+<div class="space-y-2.5 pt-1">
+<!-- Save Receipt (Primary Solid) -->
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold py-3.5 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 transition-transform active:scale-[0.99]" id="btn-save" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>حفظ السند المالي</span>
+</button>
+<!-- Preview & Print (Primary Outlined / Secondary action) -->
+<button class="w-full bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-bold py-3.5 px-4 rounded-xl shadow-sm flex items-center justify-center gap-2 transition-colors" id="btn-preview" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>معاينة وطباعة السند (P06)</span>
+</button>
+<!-- Cancel / Back -->
+<button class="w-full py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md font-semibold text-center transition-colors" onclick="history.back()" type="button">
+      إلغاء والعودة للقائمة
+    </button>
+</div>
+</div>
+<script>
+  // Dynamic interaction handling
+  (function initReceiptForm() {
+    const cashRadio = document.querySelector('input[value="cash"]');
+    const transferRadio = document.querySelector('input[value="transfer"]');
+    const transferBox = document.getElementById('transfer-details-box');
+    const tabCash = document.getElementById('tab-cash');
+    const tabTransfer = document.getElementById('tab-transfer');
+    const amountInput = document.getElementById('amount-num');
+    const wordsDisplay = document.getElementById('amount-words');
+
+    function updatePaymentUI() {
+      if (transferRadio.checked) {
+        transferBox.style.display = 'block';
+        tabTransfer.className = 'flex items-center gap-2.5 p-3 rounded-lg bg-surface-container cursor-pointer transition-all shadow-sm';
+        tabCash.className = 'flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all opacity-80';
+      } else {
+        transferBox.style.display = 'none';
+        tabCash.className = 'flex items-center gap-2.5 p-3 rounded-lg bg-surface-container cursor-pointer transition-all shadow-sm';
+        tabTransfer.className = 'flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer transition-all opacity-80';
+      }
+    }
+
+    cashRadio.addEventListener('change', updatePaymentUI);
+    transferRadio.addEventListener('change', updatePaymentUI);
+
+    // Dynamic Tafqeet approximation for quick demonstration
+    const wordsMap = {
+      '24000': 'أربعة وعشرون ألف ريال يمني فقط لا غير.',
+      '10000': 'عشرة آلاف ريال يمني فقط لا غير.',
+      '15000': 'خمسة عشر ألف ريال يمني فقط لا غير.',
+      '5000': 'خمسة آلاف ريال يمني فقط لا غير.',
+      '30000': 'ثلاثون ألف ريال يمني فقط لا غير.'
+    };
+
+    amountInput.addEventListener('input', function(e) {
+      const val = e.target.value.trim();
+      if (wordsMap[val]) {
+        wordsDisplay.textContent = wordsMap[val];
+      } else if (val) {
+        wordsDisplay.textContent = val + ' ريال يمني فقط لا غير.';
+      } else {
+        wordsDisplay.textContent = 'صفر ريال يمني فقط لا غير.';
+      }
+    });
+
+    // Checkbox counter badge update
+    const checklist = document.querySelectorAll('#treatment-checklist input[type="checkbox"]');
+    const counterBadge = document.getElementById('selected-counter');
+
+    checklist.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const count = document.querySelectorAll('#treatment-checklist input[type="checkbox"]:checked').length;
+        counterBadge.textContent = count + ' محدد';
+        const parent = cb.closest('.service-chip');
+        if (cb.checked) {
+          parent.classList.remove('bg-surface-container-low');
+          parent.classList.add('bg-surface-container-highest');
+          parent.querySelector('span').classList.add('font-bold', 'text-primary');
+          parent.querySelector('span').classList.remove('text-on-surface');
+        } else {
+          parent.classList.remove('bg-surface-container-highest');
+          parent.classList.add('bg-surface-container-low');
+          parent.querySelector('span').classList.remove('font-bold', 'text-primary');
+          parent.querySelector('span').classList.add('text-on-surface');
+        }
+      });
+    });
+
+    // Prevent duplicate submission micro-feedback
+    const saveBtn = document.getElementById('btn-save');
+    saveBtn.addEventListener('click', () => {
+      saveBtn.classList.add('opacity-75', 'cursor-wait');
+      saveBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> جارٍ حفظ السند المالي...';
+      setTimeout(() => {
+        saveBtn.classList.remove('opacity-75', 'cursor-wait', 'bg-primary');
+        saveBtn.classList.add('bg-tertiary');
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> تم حفظ السند بنجاح (#REC-2024-0518)';
+      }, 700);
+    });
+  })();
+</script></main></body></html>
