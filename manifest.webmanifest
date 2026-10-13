@@ -1,0 +1,21 @@
+{
+  "name": "SEVEN — نظام عيادة السعيدي",
+  "short_name": "SEVEN",
+  "description": "إدارة مرضى عيادة الأسنان وإصدار سندات القبض",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8f9ff",
+  "theme_color": "#006194",
+  "icons": [
+    {
+      "src": "./assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

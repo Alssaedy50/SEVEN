@@ -49,5 +49,37 @@ SEVEN is an independent clinic application. Its requirements, approved designs, 
 - [Detailed page map](docs/design/PAGE_MAP.md)
 - [Interaction inventory](docs/design/INTERACTION_INVENTORY.md)
 - [Design decisions and open questions](docs/design/DECISIONS.md)
+- [Stitch export alignment](docs/design/DESIGN_ALIGNMENT.md)
 - [Product specification](docs/PRODUCT_SPEC.md)
 - [Verification checklist](docs/VERIFICATION.md)
+
+## Running the app
+
+The app is a dependency-free static PWA (local CSS, local SVG icons, no CDN). Serve the
+project root over HTTP and open it in a browser:
+
+```bash
+python3 -m http.server 12000
+# then open http://localhost:12000/
+```
+
+Data is stored in IndexedDB on the device. Use **الإعدادات → النسخ الاحتياطي** to export
+or restore a full `.sevenbak` snapshot. Refresh the browser to pick up code changes; the
+service worker uses a network-first strategy when online and falls back to the cached
+shell offline.
+
+## Source layout
+
+```
+index.html              App shell
+manifest.webmanifest    PWA manifest
+sw.js                   Service worker (offline shell)
+assets/                 Clinic logo used by the app and receipts
+src/css/app.css         Design tokens + components (matches docs/design)
+src/js/icons.js         Inline SVG icon set
+src/js/utils.js         Money, Arabic number-to-words, dates, dialogs, toast
+src/js/store.js         IndexedDB data layer, lifecycle, backup/restore
+src/js/receipt.js       A5 receipt template + print/share/export
+src/js/views.js         Screen renderers (home, patients, receipts, settings, backup)
+src/js/app.js           Hash router + bootstrap
+```

@@ -36,32 +36,32 @@ Use this checklist for every milestone. Mark an item PASS only after the stated 
 ## Implementation verification (do not start until design gates are approved)
 
 ### Mobile shell and navigation
-- [ ] Initial load works at phone viewport width.
-- [ ] All navigation destinations open and return correctly.
-- [ ] Refresh/restart behavior matches the documented persistence policy.
-- [ ] Empty, loading, and error states are understandable in Arabic.
+- [x] Initial load works at phone viewport width.
+- [x] All navigation destinations open and return correctly.
+- [x] Refresh/restart behavior matches the documented persistence policy.
+- [x] Empty, loading, and error states are understandable in Arabic.
 - [ ] No console errors during the main workflows.
 
 ### Patient records
-- [ ] Create a patient and confirm it appears in the list.
-- [ ] Reload/reopen and confirm persistence according to the chosen storage model.
-- [ ] Search by approved identifiers/name.
-- [ ] Edit a record and verify the updated values.
+- [x] Create a patient and confirm it appears in the list.
+- [x] Reload/reopen and confirm persistence according to the chosen storage model.
+- [ ] Search by approved identifiers/name. (UI present; not yet exercised)
+- [ ] Edit a record and verify the updated values. (route present; not yet exercised)
 - [ ] Confirm patient-related receipts are correctly associated.
-- [ ] Validate required fields and malformed inputs.
+- [x] Validate required fields and malformed inputs.
 - [ ] Test archive/deletion and confirmation/recovery behavior only if included.
 
 ### Receipts
-- [ ] Create a receipt with all approved common fields.
-- [ ] Save, reopen, and confirm the values match.
-- [ ] Verify numbering uniqueness and date handling.
-- [ ] Verify currency labels and amount-in-words behavior.
-- [ ] Search/filter history and open an existing receipt.
-- [ ] Verify limited post-issue corrections create an audit entry with old/new values, timestamp, and reason; verify disallowed fields cannot be silently changed.
+- [x] Create a receipt with all approved common fields.
+- [x] Save, reopen, and confirm the values match.
+- [x] Verify numbering uniqueness and date handling.
+- [x] Verify currency labels and amount-in-words behavior.
+- [ ] Search/filter history and open an existing receipt. (filters present; not yet exercised)
+- [x] Verify limited post-issue corrections create an audit entry with old/new values, timestamp, and reason; verify disallowed fields cannot be silently changed.
 - [ ] Test long names, large amounts, missing optional fields, and Arabic text.
 
 ### Export and print
-- [ ] Preview matches the saved receipt.
+- [x] Preview matches the saved receipt.
 - [ ] Every approved output profile matches its intended dimensions.
 - [ ] PDF/print output has no clipping, blank extra pages, or misplaced RTL.
 - [ ] Image export succeeds only if included in the approved scope.
@@ -69,8 +69,8 @@ Use this checklist for every milestone. Mark an item PASS only after the stated 
 - [ ] Test output on an Android phone or explicitly leave physical-device testing OPEN.
 
 ### Data safety
-- [ ] Manual full-data backup and restore are implemented and tested; invalid backups are rejected without damaging current data.
-- [ ] Invalid backup is rejected without corrupting existing data.
+- [ ] Manual full-data backup and restore are implemented and tested; invalid backups are rejected without damaging current data. (export implemented; restore pending verification)
+- [ ] Invalid backup is rejected without corrupting existing data. (implementation present; pending verification)
 - [ ] Schema migration has a test from the previous supported version if migrations exist.
 - [ ] Cloud sync is not included or claimed unless separately approved and tested.
 - [ ] Conflict and deletion behavior are tested if multi-device sync is approved.
