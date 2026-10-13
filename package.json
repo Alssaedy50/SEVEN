@@ -1,0 +1,15 @@
+{
+  "name": "seven",
+  "private": true,
+  "type": "module",
+  "description": "SEVEN — dental clinic patient and receipt PWA. Regression tests live in tests/.",
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "test:backup": "node tests/backup-restore.test.mjs",
+    "test:patient": "node tests/patient-edit.test.mjs",
+    "test:regression": "node tests/regression.test.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}
